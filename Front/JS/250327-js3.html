@@ -1,0 +1,40 @@
+<body>
+    <script>
+        const str = 'JavaScript';
+
+        // 글자 추출(슬라이싱) -> 어떤 기능 실험시 출력하거나 변수에 담아 확인하는 작업 필요
+        let 결과 = str.substring(4);
+        console.log(결과);
+        
+        let 결과2 = str.substring(4,6);
+        console.log(결과2);
+
+
+        // 글자 변환(리플레이스)
+        let 결과3 = str.replace("Java","자바");
+        console.log(결과3);
+
+        // 글자 존재 확인
+        let 결과4 = str.includes("v");
+        console.log(결과4);
+        
+        // 글자 위치 확인
+        let 결과5 = str.indexOf("a");
+        console.log(결과5);
+        
+        // 반복되는 글자 찾기
+        let str2 = 'JavaJava';
+
+        // 첫번째 자바의 위치를 확인한 후 그 다음 인덱스부터 탐색
+        let first = str2.indexOf('Java');
+        let second = str2.indexOf('Java', first+1);
+
+        console.log(second);
+        
+        // substing과 substr의 차이
+        console.log(str.substr(1,4)); // 끝번호 포함
+        console.log(str.substring(1,4)); // 끝번호 미포함
+        
+        
+    </script>
+</body>

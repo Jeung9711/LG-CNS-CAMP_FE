@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    /* 해결해야 할 사항
+    1. 한 줄에 3개로 고정하기
+    2. 테두리 만들어 각 구역 구분하기
+    3. 항목 간 여백 설정
+    4. 글씨 크기 및 색깔 조정
+    5. 구분선 만들기
+    6. 날짜와 좋아요 양쪽으로 배치하기*/
+
+    .items {
+      /* 테두리 그리기 */
+      border: 1px solid lightgray;
+      width: 300px;
+      /* 각 items를 inline-block 처럼 나란히 배치  */
+      float: left;
+      padding-left: 10px;
+      margin: 10px;
+    }
+
+    /* 한 줄에 3개의 div만 위치하도록 조정 */
+    .items:nth-of-type(4n) { clear: left;}
+
+    /* 이미지 가운데 정렬, 크기 조정 */
+    .i1 { text-align: right;}
+    img { width: 95%; padding-top: 20px;}
+
+    li { padding-bottom: 20px;}
+
+    .i3 { font-size: 1.5rem; font-weight: bold;}
+    .i2, .s1 { color: gray;}
+
+    .i4 { border-top: 2px solid black; padding-top: 10px;}
+
+    /* 포지션 이용해서 span 배열 시도 -> 여백 관련 문제 발생
+    li > div { position: relative;}
+    .s1 { float: left;}
+    .s2 { float: right;} */
+  
+    /* span 두개를 양쪽 정렬 */
+    li > div { display: flex; justify-content: space-between;}
+    .s2 {padding-right: 10px;}
+  </style>
+</head>
+
+<body>
+  <h2>수제 초콜릿 전문점</h2>
+  <div class="items">
+    <ul>
+      <li class="i1"><img src="http://ggoreb.com/images/choco/1.jpg"></li>
+      <li class="i2">초콜릿 스타일링</li>
+      <li class="i3">간식용 수제 초콜릿</li>
+      <li class="i4">
+        <div><span class="s1">2023.03.10</span>
+          <span class="s2">좋아요 3 · 추천 5</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="items">
+    <ul>
+      <li class="i1"><img src="http://ggoreb.com/images/choco/2.jpg"></li>
+      <li class="i2">초콜릿 스타일링</li>
+      <li class="i3">간식용 수제 초콜릿</li>
+      <li class="i4">
+        <div><span class="s1">2023.03.10</span>
+          <span class="s2">좋아요 3 · 추천 5</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="items">
+    <ul>
+      <li class="i1"><img src="http://ggoreb.com/images/choco/3.jpg"></li>
+      <li class="i2">초콜릿 스타일링</li>
+      <li class="i3">간식용 수제 초콜릿</li>
+      <li class="i4">
+        <div><span class="s1">2023.03.10</span>
+          <span class="s2">좋아요 3 · 추천 5</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="items">
+    <ul>
+      <li class="i1"><img src="http://ggoreb.com/images/choco/4.jpg"></li>
+      <li class="i2">초콜릿 스타일링</li>
+      <li class="i3">간식용 수제 초콜릿</li>
+      <li class="i4">
+        <div><span class="s1">2023.03.10</span>
+          <span class="s2">좋아요 3 · 추천 5</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="items">
+    <ul>
+      <li class="i1"><img src="http://ggoreb.com/images/choco/5.jpg"></li>
+      <li class="i2">초콜릿 스타일링</li>
+      <li class="i3">간식용 수제 초콜릿</li>
+      <li class="i4">
+        <div><span class="s1">2023.03.10</span>
+          <span class="s2">좋아요 3 · 추천 15</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="items">
+    <ul>
+      <li class="i1"><img src="http://ggoreb.com/images/choco/6.jpg"></li>
+      <li class="i2">초콜릿 스타일링</li>
+      <li class="i3">간식용 수제 초콜릿</li>
+      <li class="i4">
+        <div><span class="s1">2023.03.10</span>
+          <span class="s2">좋아요 3 · 추천 5</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

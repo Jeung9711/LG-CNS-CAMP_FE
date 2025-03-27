@@ -1,0 +1,26 @@
+<style>
+    body {
+        background-color: skyblue;
+    }
+
+    /* 프린트 시 글자색 배경색 변화 */
+    @media print {
+        p {
+            color: red;
+            background-color: gray;
+            font-size: 3rem;
+        }
+    }
+    /* 최대 너비 600 이하 배경색 노랑 */
+    @media only screen and (max-width: 600px) {
+        body {
+            background-color: yellow;
+        }
+    }
+</style>
+
+<body>
+    <p>
+        브라우저의 너비가 600 픽셀 이하에서는 배경 색상이 노란색으로 변경된다.
+    </p>
+</body>

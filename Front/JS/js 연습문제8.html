@@ -1,0 +1,32 @@
+<body>
+    <script>
+        // 페이지 정리 어떻게 할까?
+        let page = 458;
+        let start = 0;
+        let end = 0;
+
+        start = parseInt(page / 10) * 10 + 1;
+        end = start + 9;
+        console.log(start, end);
+
+        //p14
+        const date = new Date();
+        let hour = date.getHours();
+        let min = date.getMinutes();
+        let sec = date.getSeconds();
+        
+        // 분과 초를 두자리 수로 출력하기
+        // 문자열과 숫자의 연산은 문자열로 출력되므로 문자 0을 앞에 더함
+        if( min <10) {
+            min = '0' + min;
+            console.log(min);
+        }
+        
+        if( sec < 10) {
+            sec = '0' + sec;
+            console.log(`sec: ${sec}`);
+        }
+        
+        console.log("현재시각 : " + hour + "시 " + min + "분 " + sec + "초");
+    </script>
+</body>

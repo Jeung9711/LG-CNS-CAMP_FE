@@ -1,0 +1,68 @@
+<style>
+    /* 라디오 버튼 숨기기 */
+    [type=radio] {
+        display: none;
+    }
+
+    /* 메뉴 내용 숨기기 */
+    div {
+        display: none;
+    }
+
+    /* 체크버튼이 숨겨졌으니 체크되면 배경색 바꾸기 + 글자클릭 시 적용 */
+    [type=radio]:checked+label {
+        background-color: palevioletred;
+    }
+
+    /* 메뉴를 누르면 내용이 보이게 적용 */
+    #a:checked~div:nth-of-type(1) {
+        display: block;
+        background-color: pink;
+    }
+
+    #b:checked~div:nth-of-type(2) {
+        display: block;
+        background-color: pink;
+    }
+
+    #c:checked~div:nth-of-type(3) {
+        display: block;
+        background-color: pink;
+    }
+
+    /* [for=c] {
+        position: absolute;
+        left: 0px;
+        top: 30px;
+
+    } */
+
+    div:first-child {
+        height: 50px;
+
+        /* flexbox에 대한 설정 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid black;
+        position: relative;
+        top: 20px; left: 20px;
+    }
+</style>
+
+<body>
+    <div>
+        <input type="radio" id='a' name='menu'>
+        <label for="a">A 메뉴</label>
+        <input type="radio" id='b' name='menu'>
+        <label for="b">B 메뉴</label>
+        <input type="radio" id='c' name='menu'>
+        <label for="c">C 메뉴</label>
+        <input type="radio" id='d' name='menu'>
+        <label for="d">D 메뉴</label>
+    </div>
+    <!-- <div>A 내용</div>
+    <div>B 내용</div>
+    <div>C 내용</div> -->
+</body>

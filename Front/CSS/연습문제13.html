@@ -1,0 +1,24 @@
+<style>
+    /* 해결해야 할 사항
+    1. 각 항목 선택시 입력창 보이기
+    1-1. 기본 상태에서 입력창 숨기기
+    1-2. 체크된 상황에서 입력창 보이기 */
+
+    textarea { display: none;}
+
+    input[id=a]:checked ~ textarea[name=info_a] {display: inline; }
+    input[id=b]:checked ~ textarea[name=info_b] {display: inline; }
+    input[id=c]:checked ~ textarea[name=info_c] {display: inline; }
+</style>
+
+<body>
+    <input type='checkbox' id='a'>
+    <label for='a'>정보 1</label>
+    <textarea name='info_a'></textarea><br>
+    <input type='checkbox' id='b'>
+    <label for='b'>정보 2</label>
+    <textarea name='info_b'></textarea><br>
+    <input type='checkbox' id='c'>
+    <label for='c'>정보 3</label>
+    <textarea name='info_c'></textarea>
+</body>

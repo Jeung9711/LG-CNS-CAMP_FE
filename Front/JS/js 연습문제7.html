@@ -1,0 +1,25 @@
+<body>
+    <script>
+        // random 0 <= x <1.0
+        let n = Math.random();
+        console.log(n);
+
+        const map = ['가위', '바위', '보'];
+        const player = 0;
+        const com = parseInt(Math.random() * 3);
+        console.log(com);
+        console.log(`player: ${map[player]}, com: ${map[com]}`);
+        let result = '';
+
+        /* 코드 */
+        if(player == com) {
+            result = '비김';
+        }else if(player == 0 && com == 1){
+            result = 'com 이김';
+        }else{
+            result = 'player 이김';
+        }
+        console.log(`결과: ${result}`);
+        
+    </script>
+</body>
