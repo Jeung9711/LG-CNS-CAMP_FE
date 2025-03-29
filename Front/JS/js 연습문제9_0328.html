@@ -1,0 +1,23 @@
+<body>
+    <script>
+        // 지역변수를 이용하여 온라인 시험 부정행위 잡기
+        function sequence() {
+            let seq = 0;
+            return function () {
+                seq++;
+                return seq;
+            }
+        }
+
+        const check = sequence();
+        // 일정 횟수 이상 포커스를 잃으면 창 닫기
+        window.addEventListener('blur', () => {
+            const count = check();
+            if (count > 5) {
+                alert('시험 종료!');
+                window.close();
+            }
+        });
+
+    </script>
+</body>

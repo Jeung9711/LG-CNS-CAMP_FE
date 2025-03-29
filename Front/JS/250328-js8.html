@@ -1,0 +1,31 @@
+<body>
+    <script>
+        // p28 무작위 번호 맞추기
+        while (true) {
+            // 반복문 실행시 초기화
+            const selected = [];
+
+            // 무작위 번호 추출, 중복x
+            while (selected.length < 3) {
+                const num = parseInt(Math.random() * 45) + 1;
+                // 리스트에 요소 있는지 확인
+                if (selected.indexOf(num) == -1) {
+                    selected.push(num);
+                }
+            }
+            console.log([...selected]);
+            // 입력된 번호와 추출된 번호 비교
+            selected.sort((a, b) => a - b);
+
+            // 번호와 비교하기
+            const lotto = [1, 8, 16];
+            // toString은 리스트의 주소가 아닌 값을 비교하기 위해 작성
+            // 순서까지 일치한지 비교하려면 join 사용
+            if (lotto == selected.toString()) {
+                console.log('맞히기 성공');
+                break;
+            }
+
+        }
+    </script>
+</body>

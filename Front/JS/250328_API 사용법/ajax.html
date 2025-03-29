@@ -1,0 +1,39 @@
+<body>
+    <div style="background-color: aliceblue;">
+        <h2></h2>
+    </div>
+    <script>
+        let url = 'https://api.themoviedb.org/3/search/movie?api_key=cba95d401a14ab806ffc13a5052aab89&query=서울'
+
+        // 아래의 전체 코드는 공식처럼 외워서 쓰기
+        // fetch는 비동기식/논블럭킹 방식으로 동작
+        // 이를 해결하기 위해 잠시 기다리는 코드 추가 -> await
+        // await를 사용하기 위해 async 사용하여 함수에 적용
+        async function run() {
+            const res = await fetch(url);
+            // 받아온 데이터를 객체로 변환
+            const data = await res.json();
+            console.log(data);
+
+            // 변환한 데이터에서 영화 제목 출력하기
+            const result = data.results;
+            console.log(result);
+            
+            // html에 출력하기 위한 변수
+            let html='';
+
+            // result는 리스트
+            result.forEach((v) => {
+                let title = v.original_title;
+                html += `<h2>${title}</h2>`
+                //console.log(title);
+            });
+            
+            // div 안에 title 출력
+            document.querySelector('div').innerHTML = html;
+        }
+
+        run();
+
+    </script>
+</body>

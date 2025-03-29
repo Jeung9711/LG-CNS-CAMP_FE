@@ -1,0 +1,23 @@
+<body>
+    <SCript>
+        const animals = ['🐶', '🐱', '🐷'];
+
+        // forEach
+
+        animals.forEach(run);
+
+        // forEach로 리스트의 각 값이 callback 함수의 인자로 적용됨
+        // 외우기
+        function run(v, i){
+            console.log(v, i);
+        }
+
+        animals.forEach(function (animal, index, array) {
+            console.log(`${animal} | ${index} | ${array}`);
+        });
+        animals.forEach((animal, index, array) => {
+            console.log(`${animal} | ${index} | ${array}`);
+        });
+
+    </SCript>
+</body>

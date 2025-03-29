@@ -1,0 +1,43 @@
+<body>
+    <script>
+        // for문 1 2 4 3 2 4 3 2 4 3 순서로 진행
+
+        for(let i=9; i>0; i=i-2) {
+            console.log(`for: ${i}`);
+        }
+
+        console.log('끝');
+
+        // 한글자씩 로그에 출력
+        let 문자='Hello JavaScript';
+        let index = 문자.length;
+        console.log(index);
+
+        for(let i=0; i<index; i++){
+            console.log(문자[i], i);
+        }
+
+        // 중첩 for문 - 구구단
+
+        for(let n=2; n<10; n++){
+            console.log(`${n}단 출력`);
+
+            for(let m=1; m<10; m++) {
+                //console.log(`${n}*${m} = ${n*m}`);
+            }
+        }
+
+        console.log('구구단 끝');
+
+        // 별 출력하기
+
+        for(let a=0; a<5; a++){
+            let star = '';
+            for(let b=0; b<=a; b++){
+                star += '*';
+            }
+            console.log(star);
+        }
+        
+    </script>
+</body>

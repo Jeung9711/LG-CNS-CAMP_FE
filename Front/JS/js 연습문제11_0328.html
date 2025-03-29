@@ -1,0 +1,45 @@
+<body>
+    <script>
+        // p12 반복문을 사용하여 객체가 가진 모든 속성 출력
+        const article = {
+            num: 1,
+            title: 'A',
+            reply: [
+                { num: 3, title: 'A-3' },
+                { num: 2, title: 'A-2' },
+                { num: 1, title: 'A-1' }
+            ]
+        };
+
+        for (let key in article) {
+            let type = typeof article[key];
+            if (type == Object) {
+                for (let key2 in article[key]) {
+                    console.log(article[key][key2]);
+                }
+            } else {
+                console.log(article[key]);
+            }
+        }
+
+        // p13. 속성 중 bathroom을 제거하고 animals 배열['개','고양이'] 속성 추가하기
+        // console로 확인시는 최종상태를 참조
+        const house = {
+            bathroom: 1,
+            room: 2,
+            address: ['제주도', '제주시', '연동'],
+            persons: [
+                { name: 'kim' },
+                { name: 'lee' }
+            ]
+        };
+        console.log(house);
+        
+        delete house['bathroom'];
+        console.log(house);
+
+        house['animals'] = ['개','고양이'];
+
+        console.log('최종:',house);
+    </script>
+</body>
