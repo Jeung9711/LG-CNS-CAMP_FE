@@ -1,0 +1,33 @@
+<style>
+    [bg] {background-color: yellow;}
+    /* 여기에 color를 넣으면 글머리표도 색이 들어감 */
+    [data-size=large] {font-size: 2rem;}
+    [data-size=small] {font-size: 0.5rem;}
+    .red {color: red;}
+
+    /* 만약 코드를 건들지 않고 해야한다면 하위선택자(띄어쓰기) 이용 */
+    [bg=yellow] span {color: blueviolet;}
+</style>
+
+<body>
+    <p>selector</p>
+    <ul>
+        <li>
+            <p>tag</p>
+        </li>
+        <li><span>class</span></li>
+        <li>
+            <p>id</p>
+        </li>
+        <li bg='yellow'><span data-size='large' class="red">
+                attribute</span></li>
+        <li>
+            <p>descendant / child</p>
+        </li>
+        <li><span data-size='small'>
+                siblings / adjacent</span></li>
+        <li>
+            <p data-size='large'>pseudo</p>
+        </li>
+    </ul>
+</body>
