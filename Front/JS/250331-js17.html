@@ -1,0 +1,12 @@
+<body>
+    <script>
+        const h1 = document.createElement('h1');
+        const text = document.createTextNode('제목');
+        h1.appendChild(text);
+        h1.setAttribute("title","속성 제목");
+        document.body.appendChild(h1);
+
+        // 주로 이걸 사용,,
+        document.body.innerHTML += '<h1 title="속성제목">제목2</h1>';
+    </script>
+</body>

@@ -1,0 +1,16 @@
+<body>
+    <div></div>
+    <script>
+        const arr = [1, 2, 3, 4, 5];
+        const arr2 = arr.map((v,i,a) => {
+            return `<p>${v}</p>`
+        });
+
+        console.log(arr2);
+
+        arr2.forEach((v) => {
+            // 순수 자바스크립트 = 바닐라 스크립트
+            document.querySelector('div').innerHTML += v;
+        })
+    </script>
+</body>

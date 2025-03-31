@@ -1,0 +1,28 @@
+<body>
+    <div class="container">
+        <div class="d-grid">
+            <button type="button" class="btn btn-primary btn-block">
+                이미지 불러오기
+            </button>
+        </div>
+        <div class="target"></div>
+    </div>
+    <script>
+        // 이미지 불러오기 클릭 시 이미지 생성, 다시 클릭 시 새로운 이미지 생성, 이전 이미지 삭제
+        document.querySelector('button').addEventListener('click', () => {
+            // 이미지가 있다면 제거
+            const targetImg = document.querySelector('.target > img');
+            if(targetImg){
+                targetImg.remove();
+            }
+            // 임의의 번호로 이미지 바꾸기
+            const count = parseInt(Math.random() * 6) +1;
+            const img = document.createElement('img');
+            img.setAttribute('src', `http://ggoreb.com/images/choco/${count}.jpg`);
+            
+            // target에 img 생성
+            const target = document.querySelector('.target');
+            target.appendChild(img);
+        });
+    </script>
+</body>

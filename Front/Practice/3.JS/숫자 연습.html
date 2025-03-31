@@ -1,0 +1,31 @@
+<body>
+    <h5> 23을 5로 나누었을 때의 몫과 나머지 구하기</h5>
+    <div class="n1"></div>
+
+    <h5>239초를 분과 초로 변환하기</h5>
+    <div class="n2"></div>
+
+    <h5>한 페이지 게시물 수가 10개, 17페이지 게시물 시작번호와 마지막 번호 구하기</h5>
+    <div class="n3"></div>
+    <script>
+        let 몫 = 0;
+        let 나머지 = 0;
+
+        몫 = 23/5;
+        나머지 = 23%5;
+
+        document.querySelector('.n1').innerHTML = `몫 = ${몫}, 나머지 = ${나머지}`;
+        
+        let min = parseInt(239/60);
+        let sec  = 239%60;
+        
+        document.querySelector('.n2').innerHTML = `${min}분${sec}초`;
+
+        let end = parseInt(170/10)*10;
+        let start = end-9;
+        console.log(start);
+
+        document.querySelector('.n3').innerHTML = `시작번호 : ${start}, 끝번호 : ${end}`;
+
+    </script>
+</body>

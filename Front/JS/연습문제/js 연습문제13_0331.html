@@ -1,0 +1,22 @@
+<body>
+    <h1>제목</h1>
+    <h3>클릭 횟수 : 0</h3>
+</body>
+<script>
+    /* 마우스 드래그 방지 이벤트*/
+    document.body.onselectstart = () => false;
+    let count = 0;
+
+    const h1 = document.querySelector('h1');
+    const h3 = document.querySelector('h3');
+
+    h1.addEventListener('click', () => {
+        count++;
+        h3.textContent = `클릭 횟수 : ${count}`;
+    })
+
+    // 텍스트 입력 방법
+    h3.textContent = ` textContent <h1> 클릭횟수</h1> : ${count}`;
+    h3.innerText = `innerText <h1> 클릭횟수</h1> : ${count}`;
+    h3.innerHTML = `<h1> 클릭횟수</h1> : ${count}`;
+</script>

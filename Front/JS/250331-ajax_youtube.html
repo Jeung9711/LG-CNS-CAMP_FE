@@ -1,0 +1,31 @@
+<body>
+    <div></div>
+    <script>
+        const url = 'http://ggoreb.com/api/youtube.jsp';
+
+        async function run() {
+            const res = await fetch(url);
+            const data = await res.json();
+
+            const items = data.items;
+            let playId = '';
+            for(const item of items) {
+                const id = item.id;
+                if('videoId' in id) {
+                    playId = id.videoId;
+                } else if('channelId' in id) {
+                    playId = id.channelId;
+                } else {
+                    playId = id.playlistId;
+                }
+
+                const snippet = item.snippet;
+                const title = snippet.title;
+
+                console.log(title,playId);
+            }
+        }
+
+        run();
+    </script>
+</body>
