@@ -1,0 +1,22 @@
+<body>
+    <input type="text" name="search">
+    <script>
+        // 스패이스 시 자동으로 해시태그 추가
+        const input = document.querySelector('[name=search]');
+        let tag = '';
+        input.addEventListener('focus', (event) => {
+            if(!input.value.includes('#')) {
+                input.value += '#';
+            }
+        });
+
+        input.addEventListener('keyup', (event)=> {
+            if(event.code == 'Space'){
+                let search = input.value;
+                if(search.length > 0 && !search.endsWith('#')) {
+                    input.value = search + '#';
+                }
+            }
+        })
+    </script>
+</body>

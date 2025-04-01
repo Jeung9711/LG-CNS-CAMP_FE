@@ -1,0 +1,43 @@
+<style>
+    tr:nth-child(2) > td:nth-child(1) ~ td {
+        background-color: yellow;
+    }
+    tr:nth-child(3) > td {
+        background-color: green;
+    }
+    tr:nth-child(4) > td:nth-child(2n) {
+        background-color: cyan;
+    }
+    /* tr:nth-child(4) > td:first-child {
+        background-color: cyan;
+    } */
+     /* not 사용한 코드 */
+     tr:nth-child(4) > td:not(:nth-child(3)) {
+        background-color: chocolate;
+     }
+    /* 직접적인 수식은 사용불가, 반복 형태만 사용가능 */
+    tr:nth-child(5) > td:nth-child(2) , 
+    tr:nth-child(5) > td:nth-child(3) {
+        background-color: orange;
+    }
+</style>
+
+<body>
+    <table border="1">
+        <tr>
+            <th>구분</th><th>A</th><th>B</th><th>C</th>
+        </tr>
+        <tr>
+            <td>가</td><td>10</td><td>10</td><td>10</td>
+        </tr>
+        <tr>
+            <td>나</td><td>20</td><td>20</td><td style="background-color: white;">20</td>
+        </tr>
+        <tr>
+            <td>다</td><td>30</td><td>30</td><td>30</td>
+        </tr>
+        <tr>
+            <td>계</td><td>60</td><td>60</td><td>60</td>
+        </tr>
+    </table>
+</body>
