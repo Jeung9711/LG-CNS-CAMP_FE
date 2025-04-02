@@ -1,0 +1,105 @@
+<style>
+    .timer {
+        width: 300px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        border: 2px skyblue solid;
+        position: relative;
+    }
+
+    .timer > h1 {
+        width: 300px;
+        height: 104px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        font-size: 2rem;
+    }
+    .control {
+        position: absolute;
+        top: 110px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+</style>
+<body>
+    <div class="timer">
+        <h1>00:00:00.00</h1>
+        <div class="control">
+            <button id="start">시작</button>
+            <button id="stop">정지</button>
+            <button id="reset">초기화</button>
+        </div>
+    </div>
+    
+</body>
+<script>
+    // 타이머 밀리초 단위로 출력
+    let startTime;
+    let timerInterval;
+    let active = false;
+    const h1 = document.querySelector('h1');
+    const btn = document.querySelectorAll('button');
+
+    function startTimer() {
+        if(!active) {
+            startTime = Date.now();
+            timerInterval = setInterval(updateTimer, 50) //10ms마다 업데이트
+            active = true;
+        }
+    }
+
+    function updateTimer() {
+        let time = Date.now() - startTime; //시작부터 현재까지의 시간
+        let totalMillisecond = Math.floor(time); //총밀리초로 환산
+        let totalSecond = Math.floor(totalMillisecond/1000); // 총 초로 환산
+        let hour = Math.floor(totalSecond/3600); //시
+        let minute = Math.floor((totalSecond%3600)/60) //분
+        let second = totalSecond%60;
+        let millisecond = Math.floor((totalMillisecond%1000)/10); //두자리 밀리초
+
+        let timeString = `${String(hour).padStart(2,'0')}:`+
+                        `${String(minute).padStart(2,'0')}:`+
+                        `${String(second).padStart(2,'0')}.`+
+                        `${String(millisecond).padStart(2,'0')}`;
+
+        h1.innerText = timeString;
+    }
+
+    function stopTimer() {
+        clearInterval(timerInterval);
+        active = false;
+    }
+    
+    function resetTimer() {
+        active = false;
+        timeString = '00:00:00.00';
+        h1.innerText = timeString;
+    }
+
+    // button 속성을 가진 인자가 많아 selectorAll로 검색 = 배열 반환
+    // 배열에 eventListener 불가 forEach 사용
+    // selector는 하위요소를 탐색, button의 아이디 판별 불가
+    btn.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if(btn.id == 'start') {
+                startTimer();
+                console.log('start')
+            } else if(btn.id == 'stop') {
+                stopTimer();
+                console.log('stop')
+            } else if(btn.id == 'reset') {
+                resetTimer();
+                console.log('reset')
+            }
+        }
+    )})
+    
+    
+</script>
